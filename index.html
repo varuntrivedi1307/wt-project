@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("bg1.jpg");
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  color: aliceblue;
+  bottom: -50px;
+  right: 100px;
+  margin: 100px;
+  margin-right: -60px;
+  max-width: 1000px;
+  padding: 16px;
+  width: 600px;
+  background: rgba(74, 63, 63, 0.5);
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    color: aliceblue;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: none;
+  background: #3b3737;
+  
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    color: aliceblue;
+  background-color: #3b3737;
+  outline: none;
+}
+
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #1f181bbe;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}   
+
+.btn:hover {
+  opacity: 1;
+}
+
+.error {
+  color: rgb(246, 241, 241);
+}
+</style>
+</head>
+<body>
+<div class="bg-img">
+  <div class="container">
+    <h1>Login</h1>
+    <!-- <label for="name"><b>Email</b></label>
+    <input type="text" placeholder="Enter Name" name="name " required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required> -->
+
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email" placeholder="Enter Email"><br>
+    <!-- For Error Print -->
+    <span id="emailError" class="error"></span><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" placeholder="Enter Password"><br>
+    <!-- For Error Print -->
+    <span id="passwordError" class="error"></span><br>
+
+    <button class="btn" onclick="validateForm()">Login</button>
+    </div>
+</div>
+<script type="text/javascript">
+  function validateForm() {
+    // Reset error messages
+    document.getElementById('passwordError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+
+    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+
+            
+   if(password == "12345" && email == "demo@gmail.com")
+   {
+    location.href = '/Website%20Template/dashboard.html';
+   }
+   else 
+    alert("No");
+
+} 
+    
+</script>
+
+</body>
+</html>
